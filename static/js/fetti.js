@@ -46,13 +46,13 @@ function Drop(x,y,maxV,minV,fade,fadeFactor) {
     }
 
     //Set the velocity of the drop
-    this.setVelocity = function(max, min){
-        //man I need to comment when I actually code things... I don't know what adjMax is
-        //I think it's "adjusted max"... yeah, we'll go with that
-        var adjMax = max - min;
+    this.setVelocity = function(xMax, xMin, yMax, yMin){
+        //Adjusted Maximum
+        var adjXMax = xMax - xMin;
+        var adjYMax = yMax - yMin;
         //Calculate the random x and y velocities
-        this.dx = Math.ceil(Math.random() * adjMax) + min;
-        this.dy = Math.ceil(Math.random() * adjMax) + min;
+        this.dx = Math.ceil(Math.random() * adjXMax) + yMin;
+        this.dy = Math.ceil(Math.random() * adjYMax) + yMin;
         //set the X direction, which is apprently calculated elsewhere...
         this.dx = this.dx * this.xDir;
     }
