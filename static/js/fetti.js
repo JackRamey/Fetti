@@ -16,7 +16,7 @@ var minVelo = parseFloat(document.getElementById("veloMin").value);
 var updateIntervalID;
 
 //Not actually a function... this is a javascript class
-function Drop(x,y,maxV,minV,fade,fadeFactor) {
+function Drop(x,y,maxXV,minXV, maxYV, minYV,fade,fadeFactor) {
     this.x = x;
     this.y = y;
     this.xDir = 1;
@@ -67,7 +67,7 @@ function Drop(x,y,maxV,minV,fade,fadeFactor) {
 
     //Aha! here we set the xdir... that's pretty dumb... fix this later
     if(Math.random() < 0.5) this.xDir = -1;
-    this.setVelocity(maxV, minV);
+    this.setVelocity(maxXV, minXV, maxYV, minYV);
 }
 
 //This is all the stuff we should be taking care of in the beginning
@@ -130,13 +130,15 @@ function update() {
 function apply() {
     fadeFlag = document.getElementById("fadeFlag").checked;
     fadeRate = parseFloat(document.getElementById("fadeRate").value);
-    maxVelo = parseFloat(document.getElementById("veloMax").value);
-    minVelo = parseFloat(document.getElementById("veloMin").value);
+    maxXVelo = parseFloat(document.getElementById("veloXMax").value);
+    minXVelo = parseFloat(document.getElementById("veloXMin").value);
+    maxYVelo = parseFloat(document.getElementById("veloYMax").value);
+    minYVelo = parseFloat(document.getElementById("veloYMin").value);
 
     //For each drop, recalculate everything
     for (var i = 0; i < dropArray.length; i++) {
         var d = dropArray[i];
-        d.setVelocity(maxVelo,minVelo);
+        d.setVelocity(maxXVelo,minXVelo, maxYVelo, minYVelo);
         d.setFade(fadeFlag,fadeRate);
     }
 }
