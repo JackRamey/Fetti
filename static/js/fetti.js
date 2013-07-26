@@ -95,6 +95,10 @@ function init() {
 function update() {
     //there is a 2/5 chance every frame that a drop is created
     if(Math.ceil(Math.random() * 100) < 40) {
+        var xMax = Math.ceil(Math.random() * 2 * MAX_WIDTH);
+        var xMin = 0;
+        var yMax = Math.ceil(Math.random() * 2 * MAX_HEIGHT);
+        var yMin = 0;
         dropArray[pointer] = new Drop(Math.ceil(Math.random() * 2 * MAX_WIDTH),0, maxVelo,minVelo,fadeFlag,fadeRate);
         //Hey here's the pointer... looks like it's to keep track of how many we've created
         //and to override the old drops that have gone out of bounds... this is pretty hacky,
