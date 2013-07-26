@@ -10,8 +10,10 @@ var pointer;
 
 var fadeFlag = document.getElementById("fadeFlag").checked;
 var fadeRate = parseFloat(document.getElementById("fadeRate").value);
-var maxVelo = parseFloat(document.getElementById("veloMax").value);
-var minVelo = parseFloat(document.getElementById("veloMin").value);
+var maxXVelo = parseFloat(document.getElementById("veloXMax").value);
+var minXVelo = parseFloat(document.getElementById("veloXMin").value);
+var maxYVelo = parseFloat(document.getElementById("veloYMax").value);
+var minYVelo = parseFloat(document.getElementById("veloYMin").value);
 
 var updateIntervalID;
 
