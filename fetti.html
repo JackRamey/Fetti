@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SGFLT.com</title>
+<link rel="stylesheet" href="static/css/bootstrap.css"></style>
+<link rel="stylesheet" href="static/css/sgflt.css"></style>
+</head>
+
+<body>
+<div class="row">
+    <div class="span3">
+    <ul class="unstyled">
+        <li>Fade Rate: <input id="fadeRate" class="span1" type="number" value="1"/></li>
+        <li>Fade: <input id="fadeFlag" type="checkbox"></li>
+        <li>X Velocity</li>
+        <li>Max<input id="veloXMax" class="span1" type="number" value="5" /></li>
+        <li>Min<input id="veloXMin" class="span1" type="number" value="1" /></li>
+        <li>Y Velocity</li>
+        <li>Max<input id="veloYMax" class="span1" type="number" value="5" /></li>
+        <li>Min<input id="veloYMin" class="span1" type="number" value="1" /></li>
+        <li></li>
+    </ul>
+    <button class="btn btn-inverse" onclick="apply()">Apply</button>
+    <button id="stopButton" class="btn btn-danger" onclick="stop()">Stop</button>
+    <button id="resumeButton" class="btn btn-success hide" onclick="resume()">Resume</button>
+    </div>
+    <div class="span9">
+        <canvas id="can1" class="thinBorder" width=900 height=500></canvas>
+    </div>
+</div>
+<script type="text/javascript" src="static/js/fetti.js"></script>
+</body>
+</html>
